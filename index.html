@@ -50,13 +50,15 @@
     nav.scrolled { box-shadow: 0 4px 24px rgba(27,43,75,0.08); }
 
     /* Logo */
-    .logo-wrap {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      line-height: 1.1;
-      text-decoration: none;
-    }
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  line-height: 1.1;
+  text-decoration: none;
+  flex-shrink: 0;
+  margin-right: 25px;
+}
     .logo-image {
       height: 58px;
       width: auto;
@@ -87,14 +89,16 @@
     }
 
     /* ── DESKTOP HORIZONTAL NAV ── */
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 0px;
-    }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  flex: 1;
+  justify-content: flex-start;
+}
     .nav-links a {
       position: relative;
-      padding: 7px 10px;
+      padding: 7px 6px;
       font-size: 0.88rem;
       font-weight: 600;
       color: var(--navy);
