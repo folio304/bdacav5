@@ -819,6 +819,15 @@ function showTool(id) {
   document.getElementById(`tool-${id}`).classList.add('active');
   document.getElementById(`tool-${id}`).scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+  // Open utility from URL parameter
+window.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const tool = params.get("tool");
+
+    if (tool && document.querySelector(`[data-tool="${tool}"]`)) {
+        showTool(tool);
+    }
+});
 
 function resetPanel(id) {
   const panel = document.getElementById(`tool-${id}`);
