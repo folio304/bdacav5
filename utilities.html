@@ -705,7 +705,7 @@
   ══════════════════════════════ -->
   <div class="calc-panel" id="tool-compliance">
     <h2>Compliance Calendar</h2>
-    <p class="calc-sub">Direct Tax &amp; MCA Statutory Due Dates — FY 2025–26 | AY 2026–27</p>
+    <p class="calc-sub">Comprehensive list of Compliances and Due Dates — FY 2025–26 | AY 2026–27</p>
 
     <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;">
       <select id="cal-filter" onchange="renderCalendar(); renderRegularMonthly();" style="font-family:'Arial',sans-serif;font-size:13px;padding:9px 14px;border:1.5px solid var(--border);border-radius:6px;background:var(--cream);color:var(--text);">
@@ -858,6 +858,15 @@ function showTool(id) {
   document.getElementById(`tool-${id}`).classList.add('active');
   document.getElementById(`tool-${id}`).scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+  // Open utility from URL parameter
+window.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const tool = params.get("tool");
+
+    if (tool && document.querySelector(`[data-tool="${tool}"]`)) {
+        showTool(tool);
+    }
+});
 
 function resetPanel(id) {
   const panel = document.getElementById(`tool-${id}`);
@@ -1281,7 +1290,7 @@ function downloadCompliancePDF() {
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(10);
     doc.setTextColor(...MUTED);
-    doc.text('Direct Tax & MCA Statutory Due Dates  |  FY 2025-26  |  AY 2026-27', margin, cursorY);
+    doc.text('Comprehensive list of Compliances and Due Dates  |  FY 2025-26  |  AY 2026-27', margin, cursorY);
 
     cursorY += 16;
     doc.setFontSize(9.5);
@@ -1429,7 +1438,7 @@ function downloadCompliancePDF() {
   doc.setFontSize(7.5);
   doc.setTextColor(...MUTED);
   const genDate = new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'long', year: 'numeric' });
-  doc.text('Generated on ' + genDate + '  |  www.batradeepak.com', margin, pageH - 20);
+  doc.text('Generated on ' + genDate + '  |  www.bdaca.com', margin, pageH - 20);
 
   doc.save('BDA_Compliance_Calendar.pdf');
 }
