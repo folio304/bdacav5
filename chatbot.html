@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BD&A AI Advisor</title>
+
+<style>
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f4f4;
+    margin:0;
+}
+
+.container{
+    max-width:900px;
+    margin:40px auto;
+    background:white;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+    overflow:hidden;
+}
+
+.header{
+    background:#1B2B4B;
+    color:white;
+    padding:20px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.chat{
+    height:450px;
+    overflow-y:auto;
+    padding:20px;
+}
+
+.message{
+    margin-bottom:15px;
+    line-height:1.6;
+}
+
+.user{
+    text-align:right;
+}
+
+.bot{
+    text-align:left;
+}
+
+.input-area{
+    display:flex;
+    border-top:1px solid #ddd;
+}
+
+input{
+    flex:1;
+    padding:15px;
+    border:none;
+    font-size:16px;
+}
+
+input:focus{
+    outline:none;
+}
+
+button{
+    width:120px;
+    background:#B8923A;
+    color:white;
+    border:none;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#98742e;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+BD&A AI Advisor
+</div>
+
+<div class="chat" id="chat">
+
+<div class="message bot">
+Hello 👋<br><br>
+I'm BD&A AI Advisor.<br><br>
+
+Ask me anything related to:
+
+<ul>
+<li>GST</li>
+<li>Income Tax</li>
+<li>ROC</li>
+<li>Audit</li>
+<li>Bank Finance</li>
+<li>RERA</li>
+</ul>
+
+</div>
+
+</div>
+
+<div class="input-area">
+
+<input
+id="question"
+placeholder="Ask your question..."
+>
+
+<button id="sendBtn">
+
+Ask
+
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+</script>
+
+</body>
+</html>
